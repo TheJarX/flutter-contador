@@ -29,22 +29,21 @@ class _CounterPageState extends State<CounterPage> {
                 ),
               Row(
                 children: <Widget>[
-                  // TODO: Change to a GestureDetector() 
                   Expanded(
-                    child: MaterialButton(
+                    child: GestureDetector(
                       child: Text(
                         '$_count',
                         textScaleFactor: 6.5,
                         style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: _fontSize,
-                            color: Colors.white),
-                      ),
-                      onPressed: _countUp,
+                          fontWeight: FontWeight.bold,
+                          fontSize: _fontSize,
+                          color: Colors.white),
+                          textAlign: TextAlign.center,
+                          ),
+                      onTap: _countUp,
+                      onDoubleTap: _countDown,
                       onLongPress: _setZero,
-                      // TODO: Remove this
-                      // splashColor: Colors.transparent, // tap
-                      // highlightColor: Colors.transparent, // long tap
+                      
                     ),
                   ),
                 ],
@@ -82,7 +81,6 @@ class _CounterPageState extends State<CounterPage> {
         _fontSize = 48.0;
       }
     });
-    print(_count);
   }
 
   void _countDown() {
@@ -92,7 +90,6 @@ class _CounterPageState extends State<CounterPage> {
         _fontSize = 48.0;
       }
     }
-    print(_count);
     setState(() {});
   }
 
